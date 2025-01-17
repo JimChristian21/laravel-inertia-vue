@@ -7,7 +7,7 @@
         <title>Laravel Inertia Vue</title>
     </Head>
     <div>
-        <header class="bg-indigo-500 text-white">
+        <header class="bg-green-500 text-white">
             <nav class="flex items-center justify-between p-4 max-w-screen-lg mx-auto">
                 <div class="space-x-6">
                     <Link href="/">Home</Link>
