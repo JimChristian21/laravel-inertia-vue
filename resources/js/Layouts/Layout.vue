@@ -1,10 +1,17 @@
+<script setup>
+    import { Link, Head } from '@inertiajs/vue3';
+</script>
+
 <template>
+    <Head>
+        <title>Laravel Inertia Vue</title>
+    </Head>
     <div>
         <header class="bg-indigo-500 text-white">
             <nav class="flex items-center justify-between p-4 max-w-screen-lg mx-auto">
                 <div class="space-x-6">
-                    <a href="/">Home</a>
-                    <a href="/about">About</a>
+                    <Link href="/">Home</Link>
+                    <Link href="/about">About</Link>
                 </div>
             </nav>
         </header>
