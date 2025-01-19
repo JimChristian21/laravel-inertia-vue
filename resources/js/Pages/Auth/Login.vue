@@ -22,8 +22,8 @@
 
     <div class="w-2/4 mx-auto"> 
         <form @submit.prevent="submit">
-            <TextInput name="Email" v-model="form.email" :message="form.errors.email"/>
-            <TextInput name="Password" v-model="form.password" :message="form.errors.password"/>
+            <TextInput name="Email" type="email" v-model="form.email" :message="form.errors.email"/>
+            <TextInput name="Password" type="password" v-model="form.password" :message="form.errors.password"/>
 
             <div class="flex items-center justify-between mb-2">
                 <div class="flex items-center gap-2">
