@@ -36,7 +36,7 @@
                     <label for="avatar" class="absolute inset-0 grid content-end cursor-pointer">
                         <span class="bg-white-70 pb-2 text-center">Avatar</span>
                     </label>
-                    <input id="avatar" type="file" @input="change" hidden/> 
+                    <input id="avatar" type="file" @input="change" hidden/>
 
                     <img :src="form.preview" alt="" class="object-cover w-28 h-28"/>
                 </div>

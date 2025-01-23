@@ -1,5 +1,9 @@
 <script setup>
     import {Head} from '@inertiajs/vue3';
+
+    defineProps({
+        users: Object
+    });
 </script>
 
 <template>
