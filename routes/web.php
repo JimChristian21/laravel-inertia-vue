@@ -3,7 +3,10 @@
 use App\Http\Controllers\AuthController;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\{
+    Auth,
+    Route
+};
 
 Route::get('/', function(Request $request) {
     return inertia('Home', [
@@ -13,14 +16,19 @@ Route::get('/', function(Request $request) {
                 ->orWhere('email', 'like', "%{$request->search}%");
         }
         )->paginate(5)->withQueryString(),
-        'searchTerm' => $request->search
+        'searchTerm' => $request->search,
+        'can' => [
+            'delete_user' => Auth::user() 
+                ? Auth::user()->can('delete',  User::class)
+                    : NULL,
+
+        ]
     ]);
 })->name('home');
 
 Route::middleware('auth')->group(function() {
 
     Route::inertia('/dashboard', 'Dashboard')->name('dashboard');
-
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
